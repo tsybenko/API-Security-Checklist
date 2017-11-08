@@ -1,9 +1,11 @@
-[English](./README.md) | [中文版](./README-zh.md) | [Português (Brasil)](./README-pt_BR.md) | [Français](./README-fr.md) | [Nederlands](./README-nl.md) | [Indonesia](./README-id.md) | [ไทย](./README-th.md) | [Русский](./README-ru.md) | [Українська](./README-uk.md)
+[English](./README.md) | [中文版](./README-zh.md) | [Português (Brasil)](./README-pt_BR.md) | [Français](./README-fr.md) | [Nederlands](./README-nl.md) | [Indonesia](./README-id.md) | [ไทย](./README-th.md) | [Русский](./README-ru.md) | [Українська](./README-uk.md) | [Español](./README-es.md) | [Italiano](./README-it.md) | [日本語](./README-ja.md) | [Deutsch](./README-de.md) | [Türkçe](./README-tr.md) | [Tiếng Việt](./README-vi.md) | [Монгол](./README-mn.md) | [हिंदी](./README-hi.md) | [العربية](./README-ar.md)
 
 # API 보안 체크리스트
 API를 설계하고 테스트하고 배포할 때 고려해야 할 중요한 보안 대책 체크리스트입니다.
 
-------------------------------------------------------------------------------
+
+---
+
 ## 인증 (Authentication)
 - [ ] `Basic Auth`를 사용하지 말고 표준 인증방식을 사용하세요. (예로, JWT, OAuth 등)
 - [ ] `인증`, `토큰 생성`, `패스워드 저장`은 직접 개발하지 말고 표준을 사용하세요.
@@ -27,9 +29,9 @@ API를 설계하고 테스트하고 배포할 때 고려해야 할 중요한 보
 
 ## 입력 및 요청 (Input)
 - [ ] 각 요청 연산에 맞는 적절한 HTTP 메서드를 사용하세요. `GET (읽기)`, `POST (생성)`, `PUT (대체/갱신)`, `DELETE (삭제)`
-- [ ] 여러분이 지원하는 포맷 (예를 들어 `application/json`이나 `application/json` 등)만을 허용하기 위해서는 요청의 Accept 헤더의 `content-type`을 검증하여 매칭되는게 없을 경우엔 `406 Not Acceptable`로 응답하세요.
+- [ ] 여러분이 지원하는 포맷 (예를 들어 `application/xml`이나 `application/json` 등)만을 허용하기 위해서는 요청의 Accept 헤더의 `content-type`을 검증하여 매칭되는게 없을 경우엔 `406 Not Acceptable`로 응답하세요.
 - [ ] 요청 받은 POST 데이터의 `content-type`을 검증하세요. (예를 들어 `application/x-www-form-urlencoded`나 `multipart/form-data` 또는 `application/json` 등)
-- [ ] 일반적인 취약점들을 피하기 위해선 사용자 입력의 유효성을 검증하세요. (예를 들어 `XSS`, `SQL-Injection` 또는 `Remove Code Execution` 등)
+- [ ] 일반적인 취약점들을 피하기 위해선 사용자 입력의 유효성을 검증하세요. (예를 들어 `XSS`, `SQL-Injection` 또는 `Remote Code Execution` 등)
 - [ ] URL에는 그 어떤 민감한 데이터 (`자격 인증 (crendentials)`, `패스워드`, `보안 토큰` 또는 `API 키`)도 포함하고 있어서는 안되며 이러한 것들은 표준 인증 방식의 헤더를 사용하세요.
 
 ## 서버 처리
@@ -52,7 +54,13 @@ API를 설계하고 테스트하고 배포할 때 고려해야 할 중요한 보
 - [ ] 각 연산에 맞는 적절한 상태 코드를 반환하세요. (예를 들어 `200 OK`, `400 Bad Request`, `401 Unauthorized`, `405 Method Not Allowed` 등)
 
 
-------------------------------------------------------------------------------
+---
 
-# Contribution
-Feel free to contribute, fork -> edit -> submit pull request. For any questions drop us an email at team@shieldfy.io.
+## 참조 :
+- [yosriady/api-development-tools](https://github.com/yosriady/api-development-tools) - RESTful HTTP+JSON API를 빌드하는 데 유용한 자원의 콜렉션.
+
+
+---
+
+# 기여하는
+Feel free to contribute by forking this repository, making some changes, and submitting pull requests. For any questions drop us an email at `team@shieldfy.io`.
